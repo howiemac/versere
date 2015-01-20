@@ -1,4 +1,4 @@
 #echo starting serve ...
-twistd -noy serve.py
+./stop ; ./start && tail -f ../logs/twistd.log
 
 

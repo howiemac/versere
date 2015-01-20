@@ -1,3 +1,5 @@
 *.pyc
+code/twistd.pid
 code/config_site.py
 htdocs/site/data
+logs
