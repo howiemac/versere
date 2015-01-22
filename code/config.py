@@ -15,7 +15,7 @@ attribution=True
 default_class="Page"
 registration_method="admin" # "admin" : admin has to register each user                                                                    
                               # "approve" : online self registration with approval by admin 
-page_default=1 # 
+default_page=1 # 
 urlpath=""  
 
 #from base.data.schema import *  #for data definition
