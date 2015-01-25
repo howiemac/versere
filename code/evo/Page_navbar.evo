@@ -1,9 +1,0 @@
-# navigation links - for override in app
-div:id="navbar"
-  for uid in (1,442,996,1009,9,10,11,):
-    p=self.get(uid)
-    a: p.name, href=p.url(), title=p.name
-    " - "
-  a:"backlinks", href=self.get(7).url('get_backlinks'), title="backlinks within this site"
-  " - "
-  a:"deepian.com", href="http://deepian.com", title="deepian's main site"
