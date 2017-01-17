@@ -10,7 +10,7 @@ sitename='change'
 
 #permits={} #basis of permit system
 
-guests=False #do guests have access by default?
+guests=True #do guests have access by default?
 attribution=True
 default_class="Page"
 registration_method="admin" # "admin" : admin has to register each user                                                                    

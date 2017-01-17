@@ -1,0 +1,20 @@
+"""
+config file for site specific items, eg database, port
+THIS SHOULD NOT BE STORED IN THE REPOSITORY
+
+"""
+
+port=8080 # default is 8080
+#database='???' # default is app folder name
+#mailto='versere@deepian.com'
+#mailfrom= 'versere@deepian.com' #email from address
+#maihost= 'deepian.com' #email host
+
+#domains=["change.deepian.com"] 
+#domains=["versere.com",'127.0.0.1','localhost'] 
+
+domains=["versere"]
+#domains=["localhost"]
+#domains=["127.0.0.1"]
+
+

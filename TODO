@@ -1,0 +1,6 @@
+- deepian links => versere
+- put live 
+  - git commit & push / pull onto new server
+  - copy data/ and database from old server 
+  - test
+  - put live (switch domain)

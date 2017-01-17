@@ -16,7 +16,7 @@ class Page(basePage):
   def get_navbar_links(self):
     "override the base version..."
     links=[]
-    for uid in (1,442,996,1009,9,10,11,):
+    for uid in (1066,1,442,996,1009,9,10,11,):
       p=self.get(uid)
       links.append(
         (p.name,p.url(),p.name)
