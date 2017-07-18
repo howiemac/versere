@@ -4,7 +4,7 @@ config file for grace app
 """
 
 
-sitename='change'
+sitename='versere'
 #meta_description="" #site description text for search engines
 #meta_keywords="" #comma separated list of keywords for search engines
 
