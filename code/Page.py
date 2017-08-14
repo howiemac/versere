@@ -32,7 +32,7 @@ class Page(basePage):
       self.fix_diary_date(req)
 #      self.reform_text(req)
       if not req.error:
-	req.warning='diary date set'
+       req.warning='diary date set'
     return self.view(req)
   post.permit='create page'
 
@@ -90,11 +90,11 @@ class Page(basePage):
     for p in cls.list(stage='posted'):
       links=[int(i[1]) for i in rule.findall(p.text)] # give list of page uids
       for i in links:
-        if i in backlinks.keys():
-	  backlinks[i]+=1
-	else:
-	  backlinks[i]=1
-    backlinks=backlinks.items()
+        if i in list(backlinks.keys()):
+          backlinks[i]+=1
+        else:
+          backlinks[i]=1
+    backlinks=list(backlinks.items())
     backlinks.sort(cmp=lambda x,y: cmp(x[1], y[1]), reverse=True) # sort in order of count
     # format and store  	    
     statpage=cls.get(7)
