@@ -18,12 +18,12 @@ registration_method="admin" # "admin" : admin has to register each user
 default_page=1 # 
 urlpath=""  
 
-#from base.data.schema import *  #for data definition
+#from evoke.data.schema import *  #for data definition
 #
 #class Test(Schema):
 #  pass
 
-#from base.config_base import User as BaseUser 
+#from evoke.config_base import User as BaseUser 
 #
 #class User(BaseUser):
 #  pass

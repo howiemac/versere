@@ -1,10 +1,10 @@
 """
-override class for base.page
+override class for evoke.page
 
 """
-from base.render import html
-from base.lib import *
-from base.Page import Page as basePage
+from evoke.render import html
+from evoke.lib import *
+from evoke.Page import Page as basePage
 
 import os, string, re
 
@@ -14,7 +14,7 @@ from calendar import month_name
 class Page(basePage):
 
   def get_navbar_links(self):
-    "override the base version..."
+    "override the evoke version..."
     links=[]
     for uid in (1066,1,442,996,1009,9,10,11,):
       p=self.get(uid)
