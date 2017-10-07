@@ -18,9 +18,16 @@ registration_method="admin" # "admin" : admin has to register each user
 default_page=1 #
 urlpath=""
 
+from evoke.data.schema import *  #for data definition
+
+class Backlink(Schema):
+  table='backlinks'
+  page = INT,KEY
+  link = INT,KEY
+
 # include config.py files from class folders
 
-from .Page.config import *
+#from evoke.config_base import Page
 
 
 

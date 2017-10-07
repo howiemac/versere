@@ -2,13 +2,15 @@
 override class for evoke.page
 
 """
-from evoke.render import html
-from evoke.lib import *
-from evoke.Page import Page as basePage
 
 import os, string, re
 
 from calendar import month_name
+
+from evoke.render import html
+from evoke.lib import *
+from evoke.Page import Page as basePage
+from evoke.data import execute
 
 
 class Page(basePage):
@@ -21,11 +23,12 @@ class Page(basePage):
       links.append(
         (p.name,p.url(),p.name)
         )
-    links.append(("backlinks",self.get(7).url('get_backlinks'),"backlinks within this site"))
+#    links.append(("backlinks",self.get(7).url('get_backlinks'),"backlinks within this site"))
     return links
 
   def post(self,req):
-    """fix date and format when posting a draft to diary category 442"""
+    """fix date and format when posting a draft to diary category 442
+       """
     if (self.parent!=442): 
       return basePage.post(self,req)
     if basePage._posted(self,req):  
@@ -64,81 +67,101 @@ class Page(basePage):
     return self.get(1).view(req)
 
   def autopost(self,req):
-    "autoposts oldest draft article, and updates backlinks"
+    "autoposts oldest draft article"
     p=self.get_todays_article() 
     msg="no draft found" # default message
     if p: # if we have any draft
       p._posted(req) #post it
       msg= "%s posted on %s" % (p.uid,p.when) 
-    self.get_backlinks(req) # update the backlinks (by crudely re-calculating the whole shebang - so this also allows for edit changes)
     return msg  
   autopost.permit="admin page"   
 
   @classmethod
   def get_todays_article(cls):
     """
-    find the earliest draft article 
-    """  
+    find the earliest draft article
+    """
     articles=cls.list(stage='draft',orderby='uid',limit='0,1')
     return articles and articles[0] or None
 
-  def get_backlinks(cls,req):
-    "checks through all posted articles for internal links, and stores the link-count for each page in Page 7 text"
-    # get the links 
-    backlinks={}
+# backlinks
+
+  def save_text(self, req):
+    """enhances the basePage version to store the links found in the text
+       """
+    self.store_backlinks(text=req.text)
+    return basePage.save_text(self,req)
+
+  def store_backlinks(self,text=''):
+    """ Extracts internal links from a posted page.
+        Stores the links in the "backlinks" table
+    """
+    if self.stage!='posted':
+      return False
+    # get the links (a list of all internal link uids)
     rule=re.compile(r'(\[\ *)(\d+)')
-    for p in cls.list(stage='posted',kind='page'):
-      links=[int(i[1]) for i in rule.findall(p.text)] # give list of page uids
-      for i in links:
-        if i in list(backlinks.keys()):
-          backlinks[i].append(p.uid)
-        else:
-          backlinks[i]=[p.uid]
-    backlinks=list(backlinks.items())
-    backlinks.sort(key=lambda x: len(x[1]), reverse=True) # sort in order of count
-    # format and store
-    statpage=cls.get(7)
-    txt=''
-    for (uid,links) in backlinks:
-      links.sort()
-      mdlinks=", ".join("[%s %s]" % (l,l) for l in links)
-      txt+="- [%d] : %s (%s)\n" % (uid,len(links),mdlinks)
-    statpage.text=txt
-    statpage.flush() # store the text
-    return statpage.view(req)
-  get_backlinks.permit="admin page" 
-  get_backlinks=classmethod(get_backlinks)
-      
-#=========================================
+    # delete any old links
+    execute("delete from `%s`.backlinks where page=%s" % (self.Config.database,self.uid))
+    # find the new links - using a dictionary to eliminate duplicates
+    backlinks={} 
+    for i in rule.findall(text or self.text):
+      backlinks[int(i[1])]=True
+    # and store
+    for link in backlinks:
+      bl=self.Backlink.new()
+      bl.page=self.uid
+      bl.link=link
+      bl.flush()
+    return True
 
-# extract diary entries from a special page
-  
-  def extract(self,req):
-    "extract a new posted page for each diary entry per page 876"
-    if self.uid!=876:
-      return self.error(req,'can only extract from page 876')
-    arts=self.text.split('\n==')
-    nam=arts[0]
-    for a in arts[1:]:
-      lines=a.split('\n')
-      p=self.new()
-      p.kind='article'
-      p.parent=442
-      p.text='\n'.join(lines[1:-1])
-#      p.name='%s %s' % (self.name,nam.replace(' :',',').replace(':',','))
-      p.name='%s %s' % (self.name,nam.split(' ',1)[1].replace(' :',',').replace(':',',')) # remove leading day of week
-      p.lineage='.1.442.'
-      p.who=self.who
-      p.stage='posted'
-      p.group=1
-      p.stamp()
-      p.flush_page(req)
-      p.seed_rating(req) 
-      p.fix_diary_date(req)
-      nam=lines[-1] #next title
-    req.message='%s articles added' % (len(arts)-1,)  
-    return self.view(req)
+  def fix_backlinks(self,req):
+    """ Extract all backlinks for all posted pages.
+        Recreates the "backlinks" table from scratch.
+    """
+    for p in self.list(stage='posted',kind='page'):
+      p.store_backlinks()
+    req.message='backlinks for all pages updated'
+    return self.redirect(req)
+  fix_backlinks.permit="admin page"
 
-      
+  def get_backlinks(self,req=None,formatted=False):
+    """ returns backlinks to self
+    req (request) is required if formatted==True
+    """
+    backlinks=self.Backlink.list_int(item='page',link=self.uid)
+    if backlinks and formatted:
+      backlinks.sort(reverse=True)
+      count=len(backlinks)
+      mdlinks="".join("- [%s]\n" % l for l in backlinks)
+      text="**%s backlink%s:**\n\n%s\n" % (count,'' if count==1 else 's',mdlinks)
+#      return text
+      return TEXT(text).formatted(req)
+    return backlinks
+
+#  def xget_backlinks(self,req):
+#    """Checks through all posted articles for internal links.
+#       Stores the links in md text format in the backlinks field.
+#    """
+#    # get the links
+#    backlinks={}
+#    rule=re.compile(r'(\[\ *)(\d+)')
+#    for p in self.list(stage='posted',kind='page'):
+#      links=[int(i[1]) for i in rule.findall(p.text)] # give list of page uids
+#      for i in links:
+#        if i in list(backlinks.keys()):
+#          backlinks[i].append(p.uid)
+#        else:
+#          backlinks[i]=[p.uid]
+#    backlinks=list(backlinks.items())
+#    # format and store
+#    for (uid,links) in backlinks:
+#      count=len(links)
+#      txt="**%s backlink%s:**\n\n%s\n" % (count,'' if count==1 else 's',mdlinks)
+#      p=self.get(uid)
+#      p.backlinks=txt
+#      p.flush() # store the text
+#    req.message='backlinks for all pages updated'
+#    return self.redirect(req)
+#  xget_backlinks.permit="admin page"
 
 
