@@ -24,7 +24,7 @@ class Page(basePage):
     links.append(("backlinks",self.get(7).url('get_backlinks'),"backlinks within this site"))
     return links
 
-  def post(self,req):                                                                                                                      
+  def post(self,req):
     """fix date and format when posting a draft to diary category 442"""
     if (self.parent!=442): 
       return basePage.post(self,req)
@@ -45,7 +45,7 @@ class Page(basePage):
      if day[1] in ['0','1','2','3','4','5','6','7','8','9']:
         day=day[:2]
      else:
-        day=day[0]	 
+        day=day[0]
      month=list(month_name).index(month)
      date='%s/%s/%s' % (day,month,year)
      self.when=DATE(date)
@@ -87,20 +87,22 @@ class Page(basePage):
     # get the links 
     backlinks={}
     rule=re.compile(r'(\[\ *)(\d+)')
-    for p in cls.list(stage='posted'):
+    for p in cls.list(stage='posted',kind='page'):
       links=[int(i[1]) for i in rule.findall(p.text)] # give list of page uids
       for i in links:
         if i in list(backlinks.keys()):
-          backlinks[i]+=1
+          backlinks[i].append(p.uid)
         else:
-          backlinks[i]=1
+          backlinks[i]=[p.uid]
     backlinks=list(backlinks.items())
-    backlinks.sort(cmp=lambda x,y: cmp(x[1], y[1]), reverse=True) # sort in order of count
-    # format and store  	    
+    backlinks.sort(key=lambda x: len(x[1]), reverse=True) # sort in order of count
+    # format and store
     statpage=cls.get(7)
     txt=''
-    for (uid,count) in backlinks:
-      txt+="[%d]: %s\n" % (uid,count)
+    for (uid,links) in backlinks:
+      links.sort()
+      mdlinks=", ".join("[%s %s]" % (l,l) for l in links)
+      txt+="- [%d] : %s (%s)\n" % (uid,len(links),mdlinks)
     statpage.text=txt
     statpage.flush() # store the text
     return statpage.view(req)

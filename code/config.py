@@ -1,5 +1,5 @@
 """
-config file for grace app
+config file for versere (evoke app)
 
 """
 
@@ -13,19 +13,14 @@ sitename='versere'
 guests=True #do guests have access by default?
 attribution=True
 default_class="Page"
-registration_method="admin" # "admin" : admin has to register each user                                                                    
-                              # "approve" : online self registration with approval by admin 
-default_page=1 # 
-urlpath=""  
+registration_method="admin" # "admin" : admin has to register each user
+                              # "approve" : online self registration with approval by admin
+default_page=1 #
+urlpath=""
 
-#from evoke.data.schema import *  #for data definition
-#
-#class Test(Schema):
-#  pass
+# include config.py files from class folders
 
-#from evoke.config_base import User as BaseUser 
-#
-#class User(BaseUser):
-#  pass
+from .Page.config import *
+
 
 
