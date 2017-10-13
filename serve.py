@@ -7,10 +7,8 @@ this is for serving a single app
 
 #fix the path
 import os,sys
-#sys.path.append(os.path.abspath('.')) 
-#sys.path.append(os.path.abspath('../..'))
-sys.path.insert(0,os.path.abspath('.')) 
-sys.path.insert(1,os.path.abspath('../..'))
+sys.path.insert(0,os.path.abspath('.'))
+#sys.path.insert(1,os.path.abspath('../..'))
 
 from twisted.application import service
 from evoke.serve import start

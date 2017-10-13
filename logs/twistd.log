@@ -1,0 +1,130 @@
+2017-10-09 13:31:02+0100 [-] Loading serve.py...
+2017-10-09 13:31:03+0100 [-] Loaded.
+2017-10-09 13:31:03+0100 [-] twistd 17.9.0 (/home/howie/code/even/bin/python3.6 3.6.2) starting up.
+2017-10-09 13:31:03+0100 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2017-10-09 13:31:03+0100 [-] Site starting on 8080
+2017-10-09 13:31:03+0100 [-] Starting factory <twisted.web.server.Site object at 0x7f4b6aba7d30>
+2017-10-09 13:32:09+0100 [-] Received SIGTERM, shutting down.
+2017-10-09 13:32:09+0100 [-] (TCP Port 8080 Closed)
+2017-10-09 13:32:09+0100 [-] Stopping factory <twisted.web.server.Site object at 0x7f4b6aba7d30>
+2017-10-09 13:32:09+0100 [-] Main loop terminated.
+2017-10-09 13:32:09+0100 [-] Server Shut Down.
+2017-10-09 13:45:17+0100 [-] Loading serve.py...
+2017-10-09 13:45:17+0100 [-] Loaded.
+2017-10-09 13:45:17+0100 [-] twistd 17.9.0 (/home/howie/code/even/bin/python3.6 3.6.2) starting up.
+2017-10-09 13:45:17+0100 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2017-10-09 13:45:17+0100 [-] Site starting on 8080
+2017-10-09 13:45:17+0100 [-] Starting factory <twisted.web.server.Site object at 0x7fc3d0c4fa20>
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET / HTTP/1.1" 302 21 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET /1 HTTP/1.1" 200 2588 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:45:47+0100 [-] URI,path >>>>  /site/evoke/js/jquery.js site/evoke/js/jquery.js
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET /site/evoke/js/jquery.js HTTP/1.1" 200 29482 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:45:47+0100 [-] URI,path >>>>  /site/evoke/js/jquery.autosize.js site/evoke/js/jquery.autosize.js
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET /site/evoke/js/jquery.autosize.js HTTP/1.1" 200 3115 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:45:47+0100 [-] URI,path >>>>  /site/bootstrap/css/bootstrap.css site/bootstrap/css/bootstrap.css
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET /site/bootstrap/css/bootstrap.css HTTP/1.1" 200 19595 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:45:47+0100 [-] URI,path >>>>  /site/bootstrap/js/bootstrap.min.js site/bootstrap/js/bootstrap.min.js
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET /site/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 9193 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:45:47+0100 [-] URI,path >>>>  /site/evoke/css/evoke.css site/evoke/css/evoke.css
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET /site/evoke/css/evoke.css HTTP/1.1" 200 1186 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:45:47+0100 [-] URI,path >>>>  /site/js/app.js site/js/app.js
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET /site/js/app.js HTTP/1.1" 200 58 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:45:47+0100 [-] URI,path >>>>  /site/css/app.css site/css/app.css
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET /site/css/app.css HTTP/1.1" 200 166 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:45:47+0100 [-] URI,path >>>>  /site/evoke/js/evoke.js site/evoke/js/evoke.js
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET /site/evoke/js/evoke.js HTTP/1.1" 200 428 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:45:47+0100 [-] URI,path >>>>  /site/data/000/000/thumbs/8.jpg site/data/000/000/thumbs/8.jpg
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET /site/data/000/000/thumbs/8.jpg HTTP/1.1" 200 2085 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:45:47+0100 [-] URI,path >>>>  /site/bootstrap/fonts/glyphicons-halflings-regular.woff site/bootstrap/fonts/glyphicons-halflings-regular.woff
+2017-10-09 13:45:47+0100 [-] "127.0.0.1" - - [09/Oct/2017:12:45:46 +0000] "GET /site/bootstrap/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 200 23320 "http://versere:8080/site/bootstrap/css/bootstrap.css" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 13:46:47+0100 [-] Timing out client: IPv4Address(TCP, '127.0.0.1', 56374)
+2017-10-09 13:46:47+0100 [-] Timing out client: IPv4Address(TCP, '127.0.0.1', 56375)
+2017-10-09 13:46:47+0100 [-] Timing out client: IPv4Address(TCP, '127.0.0.1', 56376)
+2017-10-09 13:46:47+0100 [-] Timing out client: IPv4Address(TCP, '127.0.0.1', 56371)
+2017-10-09 13:46:47+0100 [-] Timing out client: IPv4Address(TCP, '127.0.0.1', 56372)
+2017-10-09 13:46:57+0100 [-] Received SIGTERM, shutting down.
+2017-10-09 13:46:57+0100 [-] (TCP Port 8080 Closed)
+2017-10-09 13:46:57+0100 [-] Stopping factory <twisted.web.server.Site object at 0x7fc3d0c4fa20>
+2017-10-09 13:46:57+0100 [-] Main loop terminated.
+2017-10-09 13:46:57+0100 [-] Server Shut Down.
+2017-10-09 13:56:21+0100 [-] Loading serve.py...
+2017-10-09 13:56:21+0100 [-] Loaded.
+2017-10-09 13:56:21+0100 [-] twistd 17.9.0 (/home/howie/code/even/bin/python3.6 3.6.2) starting up.
+2017-10-09 13:56:21+0100 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2017-10-09 13:56:21+0100 [-] Site starting on 8080
+2017-10-09 13:56:21+0100 [-] Starting factory <twisted.web.server.Site object at 0x7f6594902e80>
+2017-10-09 14:02:05+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:02:04 +0000] "GET /1 HTTP/1.1" 200 2588 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:02:05+0100 [-] URI,path >>>>  /site/evoke/js/evoke.js site/evoke/js/evoke.js
+2017-10-09 14:02:05+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:02:04 +0000] "GET /site/evoke/js/evoke.js HTTP/1.1" 200 428 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:02:05+0100 [-] URI,path >>>>  /site/css/app.css site/css/app.css
+2017-10-09 14:02:05+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:02:04 +0000] "GET /site/css/app.css HTTP/1.1" 200 166 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:02:05+0100 [-] URI,path >>>>  /site/js/app.js site/js/app.js
+2017-10-09 14:02:05+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:02:04 +0000] "GET /site/js/app.js HTTP/1.1" 200 58 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:02:05+0100 [-] URI,path >>>>  /site/evoke/js/jquery.js site/evoke/js/jquery.js
+2017-10-09 14:02:05+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:02:04 +0000] "GET /site/evoke/js/jquery.js HTTP/1.1" 200 29482 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:02:05+0100 [-] URI,path >>>>  /site/evoke/js/jquery.autosize.js site/evoke/js/jquery.autosize.js
+2017-10-09 14:02:05+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:02:04 +0000] "GET /site/evoke/js/jquery.autosize.js HTTP/1.1" 200 3115 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:02:05+0100 [-] URI,path >>>>  /site/bootstrap/css/bootstrap.css site/bootstrap/css/bootstrap.css
+2017-10-09 14:02:05+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:02:04 +0000] "GET /site/bootstrap/css/bootstrap.css HTTP/1.1" 200 19595 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:02:05+0100 [-] URI,path >>>>  /site/bootstrap/js/bootstrap.min.js site/bootstrap/js/bootstrap.min.js
+2017-10-09 14:02:05+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:02:04 +0000] "GET /site/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 9193 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:02:05+0100 [-] URI,path >>>>  /site/evoke/css/evoke.css site/evoke/css/evoke.css
+2017-10-09 14:02:05+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:02:04 +0000] "GET /site/evoke/css/evoke.css HTTP/1.1" 200 1186 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:02:05+0100 [-] URI,path >>>>  /site/data/000/000/thumbs/8.jpg site/data/000/000/thumbs/8.jpg
+2017-10-09 14:02:05+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:02:04 +0000] "GET /site/data/000/000/thumbs/8.jpg HTTP/1.1" 200 2085 "http://versere:8080/1" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:03:05+0100 [-] Timing out client: IPv4Address(TCP, '127.0.0.1', 56393)
+2017-10-09 14:03:05+0100 [-] Timing out client: IPv4Address(TCP, '127.0.0.1', 56394)
+2017-10-09 14:03:05+0100 [-] Timing out client: IPv4Address(TCP, '127.0.0.1', 56396)
+2017-10-09 14:03:05+0100 [-] Timing out client: IPv4Address(TCP, '127.0.0.1', 56395)
+2017-10-09 14:03:05+0100 [-] Timing out client: IPv4Address(TCP, '127.0.0.1', 56392)
+2017-10-09 14:09:21+0100 [-] Received SIGTERM, shutting down.
+2017-10-09 14:09:21+0100 [-] (TCP Port 8080 Closed)
+2017-10-09 14:09:21+0100 [-] Stopping factory <twisted.web.server.Site object at 0x7f6594902e80>
+2017-10-09 14:09:21+0100 [-] Main loop terminated.
+2017-10-09 14:09:21+0100 [-] Server Shut Down.
+2017-10-09 14:09:21+0100 [-] Loading serve.py...
+2017-10-09 14:09:22+0100 [-] Loaded.
+2017-10-09 14:09:22+0100 [-] twistd 17.9.0 (/home/howie/code/even/bin/python3.6 3.6.2) starting up.
+2017-10-09 14:09:22+0100 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2017-10-09 14:09:22+0100 [-] Site starting on 8080
+2017-10-09 14:09:22+0100 [-] Starting factory <twisted.web.server.Site object at 0x7f16b0760ba8>
+2017-10-09 14:12:58+0100 [-] Received SIGTERM, shutting down.
+2017-10-09 14:12:58+0100 [-] (TCP Port 8080 Closed)
+2017-10-09 14:12:58+0100 [-] Stopping factory <twisted.web.server.Site object at 0x7f16b0760ba8>
+2017-10-09 14:12:59+0100 [-] Main loop terminated.
+2017-10-09 14:12:59+0100 [-] Server Shut Down.
+2017-10-09 14:12:59+0100 [-] Loading serve.py...
+2017-10-09 14:12:59+0100 [-] Loaded.
+2017-10-09 14:12:59+0100 [-] twistd 17.9.0 (/home/howie/code/even/bin/python3.6 3.6.2) starting up.
+2017-10-09 14:12:59+0100 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2017-10-09 14:12:59+0100 [-] Site starting on 8080
+2017-10-09 14:12:59+0100 [-] Starting factory <twisted.web.server.Site object at 0x7fd24bb1a710>
+2017-10-09 14:27:50+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:27:49 +0000] "GET / HTTP/1.1" 404 42 "http://versere:8080/1066" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:27:50+0100 [-] "127.0.0.1" - - [09/Oct/2017:13:27:49 +0000] "GET /favicon.ico HTTP/1.1" 404 42 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+2017-10-09 14:28:23+0100 [-] Received SIGTERM, shutting down.
+2017-10-09 14:28:23+0100 [-] (TCP Port 8080 Closed)
+2017-10-09 14:28:23+0100 [-] Stopping factory <twisted.web.server.Site object at 0x7fd24bb1a710>
+2017-10-09 14:28:23+0100 [-] Main loop terminated.
+2017-10-09 14:28:23+0100 [-] Server Shut Down.
+2017-10-09 16:47:44+0100 [-] Loading serve.py...
+2017-10-09 16:47:44+0100 [-] Loaded.
+2017-10-09 16:47:44+0100 [-] twistd 17.9.0 (/home/howie/code/even/bin/python3.6 3.6.2) starting up.
+2017-10-09 16:47:44+0100 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2017-10-09 16:47:44+0100 [-] Site starting on 8080
+2017-10-09 16:47:44+0100 [-] Starting factory <twisted.web.server.Site object at 0x7f075a5cdb38>
+2017-10-09 16:48:10+0100 [-] Received SIGTERM, shutting down.
+2017-10-09 16:48:10+0100 [-] (TCP Port 8080 Closed)
+2017-10-09 16:48:10+0100 [-] Stopping factory <twisted.web.server.Site object at 0x7f075a5cdb38>
+2017-10-09 16:48:10+0100 [-] Main loop terminated.
+2017-10-09 16:48:10+0100 [-] Server Shut Down.
+2017-10-09 16:53:25+0100 [-] Loading serve.py...
+2017-10-09 16:53:25+0100 [-] Loaded.
+2017-10-09 16:53:25+0100 [-] twistd 17.9.0 (/home/howie/code/even/bin/python3.6 3.6.2) starting up.
+2017-10-09 16:53:25+0100 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2017-10-09 16:53:25+0100 [-] Site starting on 8080
+2017-10-09 16:53:25+0100 [-] Starting factory <twisted.web.server.Site object at 0x7effecace898>
+2017-10-09 16:53:37+0100 [-] Received SIGTERM, shutting down.
+2017-10-09 16:53:37+0100 [-] (TCP Port 8080 Closed)
+2017-10-09 16:53:37+0100 [-] Stopping factory <twisted.web.server.Site object at 0x7effecace898>
+2017-10-09 16:53:37+0100 [-] Main loop terminated.
+2017-10-09 16:53:37+0100 [-] Server Shut Down.

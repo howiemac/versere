@@ -16,7 +16,7 @@ default_class="Page"
 registration_method="admin" # "admin" : admin has to register each user
                               # "approve" : online self registration with approval by admin
 default_page=1 #
-urlpath=""
+urlpath=""  # no /evoke in url
 
 from evoke.data.schema import *  #for data definition
 

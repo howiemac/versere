@@ -1,0 +1,27 @@
+--- look.py	(original)
++++ look.py	(refactored)
+@@ -5,7 +5,7 @@
+ sys.path.insert(0,os.path.abspath('.')) 
+ sys.path.insert(1,os.path.abspath('../..'))
+ 
+-from config_site import domains
++from .config_site import domains
+ 
+ #start up
+ from base.serve import Dispatcher
+--- Page.py	(original)
++++ Page.py	(refactored)
+@@ -90,11 +90,11 @@
+     for p in cls.list(stage='posted'):
+       links=[int(i[1]) for i in rule.findall(p.text)] # give list of page uids
+       for i in links:
+-        if i in backlinks.keys():
++        if i in list(backlinks.keys()):
+ 	  backlinks[i]+=1
+ 	else:
+ 	  backlinks[i]=1
+-    backlinks=backlinks.items()
++    backlinks=list(backlinks.items())
+     backlinks.sort(cmp=lambda x,y: cmp(x[1], y[1]), reverse=True) # sort in order of count
+     # format and store  	    
+     statpage=cls.get(7)
