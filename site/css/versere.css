@@ -1,0 +1,30 @@
+blockquote.evoke{
+ color:#DDD;
+}
+q {
+ color:#DDD;
+}
+
+/********************** ratings-related overrides of evoke.css  ********************/
+
+
+#rate a {
+color:#335795;
+}
+
+#rate a.enabled {
+color:#EEE;
+}
+
+#rate a.disabled {
+color:#444;
+}
+
+#rate a:hover{
+color:#F44;
+}
+
+#rate a.plus:hover{
+color:#4F4;
+}
+
