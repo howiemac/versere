@@ -1,10 +1,16 @@
 # inclusion to display text
-div: cls="row"
-  div: cls='col-md-12 text'
-#    article:
-      self.Page_view_images.evo
-      self.text.formatted(req)
-      backlinks=self.get_backlinks(req,formatted=True)
-      if backlinks:
+backlinks=self.get_backlinks(req,formatted=True)
+if self.get_images():
+  div:cls='col-8'
+    self.text.formatted(req)
+    if backlinks:
+        hr:
+        backlinks
+  div:cls='col-4'
+    self.Page_view_images.evo
+else:
+  div:cls='col-12'
+    self.text.formatted(req)
+    if backlinks:
         hr:
         backlinks

@@ -1,0 +1,8 @@
+# standard evoke/evo wrapper
+"<!DOCTYPE html>"
+html: lang="en" 
+  wrapper_head.evo
+  body: id=req.pageid or 'standardbody', cls="bg-dark text-light"
+    div: cls="container-fluid"
+      wrapper_alert.evo
+      content.here
